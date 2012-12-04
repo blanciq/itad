@@ -1,3 +1,5 @@
 /*.ncrunchsolution
-/ITAD/obj
-/ITAD/bin
+bin
+obj
+/*.suo
+*.user
