@@ -1,0 +1,473 @@
+﻿body, input, button {
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-size: 1.2em;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    max-width: 980px; /*Remove this to make it full screen*/
+    margin: 1em auto;
+}
+
+button, input[type=submit] {
+    border: 1px solid #dedede;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+/*#region Header */
+
+header {
+    margin: 0 .7em;
+    position: relative;
+}
+
+    header p {
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+#userSettings {
+    float: right;
+}
+
+    #userSettings > form:before {
+        content: ' | ';
+    }
+
+    #userSettings form {
+        display: inline;
+    }
+
+#menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+    #menu li {
+        display: inline-block;
+    }
+
+    #menu li:not(:first-child) {
+        margin-left: .8em;
+    }
+
+/*#endregion */
+
+/*#region forms */
+
+#changePasswordForm input,
+#registerForm input,
+#loginForm input {
+    border: 1px solid #dedede;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    #changePasswordForm input[type=text], #changePasswordForm input[type=password],
+    #registerForm input[type=text], #registerForm input[type=password],
+    #loginForm input[type=text], #loginForm input[type=password] {
+        background: white;
+        width: 220px;
+    }
+
+#loginForm input[type=checkbox]{
+    border: none;
+}
+
+#changePasswordForm input[type=submit] {
+    margin-bottom: .8em;
+}
+
+#registerPanel{
+    display: none;
+    position: relative;
+    float: left;
+    text-align: left;
+    padding: 25px;
+}
+
+#loginPanel {
+    display: block;
+    position: relative;
+    float: left;
+    text-align: left;
+    padding: 25px;
+    width: 600px;
+}
+
+#registerPanel h2,
+#loginPanel h2 {
+    padding-bottom: .5em;
+    margin: 0;
+}
+
+#registerPanel a,
+#loginPanel a {
+    color: navy;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#registerPanel p,
+#loginPanel p {
+    clear: both;
+}
+
+#localLoginPanel {
+    border-right: solid 2px #c8c8c8;
+    float: left;
+    width: 45%;
+    text-align: left;
+}
+
+#socialLoginPanel {
+    margin-left: 40px;
+    float: left;
+    width: 45%;
+    text-align: left;
+}
+
+    #socialLoginPanel h2 {
+        margin-bottom:  5px;
+    }
+
+#socialLoginList button {
+    margin-bottom: 12px;
+}
+
+fieldset {
+    border: none;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+    display: inline;
+}
+
+    fieldset legend {
+        display: none;
+    }
+
+    fieldset label:not(.checkbox) {
+        display: block;
+        text-align: left;
+    }
+
+    fieldset ol {
+        padding: 0;
+        margin: 0 0 8px 0;
+        list-style: none;
+    }
+
+        fieldset ol li {
+            padding-bottom: 5px;
+        }
+
+ol.round {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/*#endregion */
+
+#body {
+    min-height: 400px;
+    text-align: center;
+}
+
+/*#region info and errors */
+.error {
+    float: none;
+    color: red;
+    padding-left: .5em;
+    vertical-align: top;
+}
+
+.validation-summary-errors {
+    color: red;
+    list-style: none;
+    width: 220px;
+    font-size: .8em;
+}
+
+.validation-summary-errors ul{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/*#endregion */
+
+/*#region Unauthorized */
+
+#unauthorized {
+    margin: 3em 0;
+    text-align: center;
+}
+
+    #unauthorized ul {
+        list-style: none;
+        padding: 0;
+        margin: 3em 0;
+    }
+
+    #unauthorized li {
+        display: inline-block;
+        padding: 6px 20px;
+        background-color: #dedede;
+        border: 1px solid gray;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+        #unauthorized li:first-child {
+            margin-right: 2em;
+        }
+
+/*#endregion */
+
+/*#region Footer */
+
+footer {
+    clear: both;
+    margin: 5em 5em .7em 0;
+}
+
+/*#endregion */
+
+@media only screen and (max-width: 600px) {
+
+    body {
+        margin: .2em 0;
+    }
+
+    header {
+        text-align: center;
+    }
+}
+
+/*------------------ added by Maciej Panecki */
+
+* {
+    -webkit-transition: all 250ms ease-out;
+    -moz-transition: all 250ms ease-out;
+    -ms-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+}
+
+body {
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+.content-wrapper {
+    min-width: 500px;
+}
+
+
+h2 {
+    text-align: center;
+    color: #464646;
+}
+
+#votes {
+    overflow: hidden;
+    height: 100px;
+}
+
+    #votes > .PG,
+    #votes > .UG {
+        text-align: center;
+        font-size: 25px;
+        width: 240px;
+        height: 150px;
+        color: #464646;
+    }
+
+    #votes > .PG {
+        float: left;
+    }
+
+    #votes > .UG {
+        float: right;
+    }
+
+        #votes > .PG > span,
+        #votes > .UG > span {
+            color: #000;
+            font-size: 40px;
+            line-height: 50px;
+            display: block;
+            text-align: center;
+        }
+
+    #votes > .progress {
+        display: block;
+        margin: auto 0;
+        overflow: hidden;
+        padding: 0px 20px;
+        margin: 30px 0px;
+        height: 36px;
+    }
+
+        #votes > .progress > .PG,
+        #votes > .progress > .UG {
+            border-radius: 4px;
+            height: 34px;
+            -webkit-box-shadow: inset 0px 2px 10px 2px rgba(254, 254, 254, 0.3);
+            -moz-box-shadow: inset 0px 2px 10px 2px rgba(254, 254, 254, 0.3);
+            -ms-box-shadow: inset 0px 2px 10px 2px rgba(254, 254, 254, 0.3);
+            -o-box-shadow: inset 0px 2px 10px 2px rgba(254, 254, 254, 0.3);
+            box-shadow: inset 0px 2px 10px 2px rgba(254, 254, 254, 0.3);
+        }
+
+        #votes > .progress > .PG {
+            border: 1px solid #d12522;
+            width: 50%;
+            float: left;
+            background-color: #e2382e;
+            background-image: linear-gradient(bottom, #e2382e 0%, #F16D66 100%);
+            background-image: -o-linear-gradient(bottom, #e2382e 0%, #F16D66 100%);
+            background-image: -moz-linear-gradient(bottom, #e2382e 0%, #F16D66 100%);
+            background-image: -webkit-linear-gradient(bottom, #e2382e 0%, #F16D66 100%);
+            background-image: -ms-linear-gradient(bottom, #e2382e 0%, #F16D66 100%);
+        }
+
+        #votes > .progress > .UG {
+            border: 1px solid #3b55a4;
+            overflow: hidden;
+            background-color: #37529a;
+            background-image: linear-gradient(bottom, #37529a 0%, #7290D7 100%);
+            background-image: -o-linear-gradient(bottom, #37529a 0%, #7290D7 100%);
+            background-image: -moz-linear-gradient(bottom, #37529a 0%, #7290D7 100%);
+            background-image: -webkit-linear-gradient(bottom, #37529a 0%, #7290D7 100%);
+            background-image: -ms-linear-gradient(bottom, #37529a 0%, #7290D7 100%);
+        }
+
+form {
+    text-align: center;
+}
+
+    form input[type="radio"] {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+    }
+
+        form input[type="radio"]:checked + label {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+        }
+
+    form label[for="PG"],
+    form label[for="UG"] {
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+        transform: scale(0.9);
+        cursor: pointer;
+        background: transparent none scroll no-repeat center center;
+        font-size: 0px;
+        width: 225px;
+        height: 225px;
+        opacity: 0.5;
+    }
+
+    form label[for="PG"] {
+        background-image: url('img/pg.png');
+        float: left;
+    }
+
+    form label[for="UG"] {
+        background-image: url('img/ug.png');
+        float: right;
+    }
+
+    form .action {
+        text-align: center;
+    }
+
+    form input[type="submit"] {
+        background-color: #000;
+        border: none;
+        color: #FFF;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        font-size: 25px;
+        border-radius: 50%;
+    }
+
+        form input[type="submit"]:hover {
+            opacity: 0.6;
+        }
+
+    form span.field-validation-error {
+        position: relative;
+    }
+
+        form span.field-validation-error span {
+            display: inline-block;
+            margin: 100px 0 0 -150px;
+            position: absolute;
+            border: 1px solid #e33429;
+            padding: 10px 0px;
+            width: 300px;
+        }
+
+        form span.field-validation-error + .action input[type="submit"] {
+            background-color: #e33429;
+        }
+
+    form:after {
+        background: transparent url('img/vs.png') scroll no-repeat center center;
+        content: '';
+        border-radius: 50%;
+        margin-top: 20px;
+        display: inline-block;
+        border: none;
+        color: #000;
+        width: 175px;
+        height: 175px;
+    }
+
+
+@media only screen and (max-width : 700px) {
+    #votes > .progress {
+        display: none;
+    }
+
+    form .action {
+        clear: both;
+    }
+
+    form span.field-validation-error span {
+        position: relative;
+        margin: 0;
+    }
+
+    form:after {
+        display: none;
+    }
+}
