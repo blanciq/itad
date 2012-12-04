@@ -1,5 +1,5 @@
-/*.ncrunchsolution
+*.ncrunchsolution
 bin
 obj
-/*.suo
+*.suo
 *.user
