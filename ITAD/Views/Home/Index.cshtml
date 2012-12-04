@@ -1,1 +1,54 @@
-﻿<h2>Hello world!</h2>
+﻿<h2 data-bind="text: Question"></h2>
+<div id="votes">
+    <!-- ko foreach: Votes -->
+    <div data-bind="attr: { class: Answer }">
+        <span data-bind="attr: { id: 'vote-'+Answer }, text: Count"></span>
+        <strong data-bind="text: Answer"></strong>
+    </div>
+    <!-- /ko -->
+    
+    <div class="progress" data-bind="foreach: Votes">
+        <!-- ko if: $index() == 0 -->
+        <div id="progress-indicator" 
+             data-bind="attr: { class: Answer, style: 'width: ' + $parent.Percentage() + '%'}"></div>
+        <!-- /ko -->
+
+        <!-- ko if: $index() != 0 -->
+        <div data-bind="attr: { class: Answer, id: 'progress-'+Answer}"></div>
+        <!-- /ko -->
+    </div>
+</div>
+
+<form>
+    <!-- ko foreach: Votes -->
+    <input data-bind="attr: { id: Answer, value: Answer }, checked: $parent.Answer" name="Answer" type="radio" />
+    <label data-bind="attr: { for: Answer }, text: Answer"></label>
+    <!-- /ko -->
+    
+    <div class="action">
+        <input type="submit" value="Głosuj" data-bind="click: vote" />
+    </div>
+</form>
+@section Scripts {
+    <script type="text/javascript">
+        $(function() {
+            var viewModel = new PollViewModel();
+            ko.applyBindings(viewModel);
+
+            DAL.getData().done(function(data) {
+                viewModel.Question(data.Question);
+                viewModel.Answers(data.Answers);
+                viewModel.updateVotes(data.Votes);
+            });
+
+            var hub = $.connection.pollHub;
+
+            hub.client.updateVotes = function(votes) {
+                viewModel.updateVotes(votes);
+            };
+
+            $.connection.hub.start();
+
+        });
+    </script>
+}

@@ -11,6 +11,11 @@
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/knockout-2.1.0.js"></script>
+    <script src="~/Scripts/jquery.signalR-1.0.0-alpha1.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="~/Scripts/App/DAL.js"></script>
+    <script src="~/Scripts/App/PollViewModel.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
